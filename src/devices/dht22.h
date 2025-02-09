@@ -11,10 +11,6 @@ private:
     DHT dht;
     uint8_t _pin;  // Store the pin number for debugging
     
-    String floatToString(float f) {
-        return String(f, 0);
-    }
-
     float celciusToFahrenheit(float celsius) {
         return (celsius * 9.0 / 5.0 + 32.0);
     }
@@ -36,7 +32,7 @@ public:
             return "ERR";
         }
         float tempF = celciusToFahrenheit(tempC);
-        return floatToString(tempF);
+        return String(tempF, 0);
     }
 
     String getHumidity() {
@@ -46,7 +42,7 @@ public:
             Serial.println(_pin);
             return "ERR";
         }        
-        return floatToString(h);
+        return String(h, 0);
     }
 
     float getRawTemperatureF() {

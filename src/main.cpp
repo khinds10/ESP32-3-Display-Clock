@@ -37,7 +37,6 @@
 
 // include internet files
 #include <internet/api.h>
-#include <internet/ntp.h>
 #include <internet/wifi.h>
 
 // include device files
@@ -61,6 +60,9 @@ ExtendedDHT22 dht(DHTPIN, DHTTYPE);
 // API
 API api;
 
+// WiFi
+ExtendedWiFi wifi(ssid, password);
+
 // LoopManager for API incremental updates and restart thresholds
 LoopManager loopManager;
 
@@ -68,9 +70,9 @@ void setup() {
   Serial.begin(115200);
 
   // begin WiFi connection
-  initWiFi();
-  Serial.print("RRSI: ");
-  Serial.println(WiFi.RSSI());
+  wifi.init();
+  Serial.print("RSSI: ");
+  Serial.println(wifi.getRSSI());
 
   // init and get the time
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
@@ -89,11 +91,8 @@ void setup() {
 
   // Get initial outside temperature reading
   dht.begin();
-  String tempF = dht.getTemperatureF();
-  String humidity = dht.getHumidity();
-  String outsideTemp = api.updateWeatherHub(tempF, humidity);
-  if (outsideTemp != "") outsideTempDisplay.showTemperature(outsideTemp);
-  api.updateDataHub();
+  api.updateWeatherHub(dht.getTemperatureF(), dht.getHumidity());
+  outsideTempDisplay.showTemperature(dht.getTemperatureF());
 }
 
 void loop() {
@@ -107,19 +106,13 @@ void loop() {
     struct tm *timeInfo = localtime(&now);
     timeDisplay.updateTimeDisplay(timeInfo);
 
-    // Read temperature and humidity using ExtendedDHT22 methods
-    String tempF = dht.getTemperatureF();
-    String humidity = dht.getHumidity();
-    Serial.println("Current temp: " + tempF);
-
     // Display inside temperature
-    insideTempDisplay.showTemperature(tempF);
+    insideTempDisplay.showTemperature(dht.getTemperatureF());
 
     // Update the weather hub, data hub, and outside temperature display
     if (loopManager.shouldUpdateAPI()) {
-        String outsideTemp = api.updateWeatherHub(tempF, humidity);
-        if (outsideTemp != "") outsideTempDisplay.showTemperature(outsideTemp);
-        api.updateDataHub();
+        api.updateWeatherHub(dht.getTemperatureF(), dht.getHumidity());
+        outsideTempDisplay.showTemperature(dht.getTemperatureF());
         loopManager.resetSamplesTaken();
     }
 

@@ -66,28 +66,6 @@ public:
         http.end();
         return String(weatherResponseDoc["current"]["temp"].as<float>());
     }
-
-    // update the data hub with uptime and ip address
-    void updateDataHub() {
-        HTTPClient http;
-        String requestBody;
-        StaticJsonDocument<1000> deviceHubPOSTDoc;
-        
-        // create JSON document with the device ip and uptime
-        deviceHubPOSTDoc["device"] = device_name;
-        deviceHubPOSTDoc["value1"] = WiFi.localIP().toString();
-        deviceHubPOSTDoc["value2"] = floatToString(millis() / 1000);
-        serializeJsonPretty(deviceHubPOSTDoc, requestBody);
-        Serial.println(requestBody);
-
-        // HTTP POST JSON
-        http.begin((String) datahub_host + "/api/logJSON/");
-        http.addHeader("Content-Type", "application/json");
-        int httpCode = http.PUT(requestBody);
-        Serial.println(httpCode);
-        Serial.println(http.getString());
-        http.end();
-    }
 };
 
 #endif // API_H
