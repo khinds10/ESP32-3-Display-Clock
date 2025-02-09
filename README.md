@@ -2,47 +2,6 @@
 
 This project uses an ESP32 microcontroller to display the current time and temperatures on three TM1637 displays. The first display shows the current time in 12-hour format with a blinking colon and PM indicator. The second display shows the indoor temperature from a DHT22 sensor. The third display shows the outdoor temperature fetched from an online weather API.
 
-
-
-
-
-
-
-DHT 22
-    -    -> GND
-    +    -> VIN
-    DATA -> D18
-
-TIME
-    GND  -> GND
-    5V   -> VIN
-    DIO  -> D23
-    CLK  -> D22
-    
-OUTDOOR TEMP
-    GND  -> GND
-    5V   -> VIN
-    DIO  -> D25
-    CLK  -> D32
-    
-INDOOR TEMP
-    GND  -> GND
-    5V   -> VIN
-    DIO  -> D21
-    CLK  -> D19
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Hardware Setup
 
 ### Components Required
@@ -91,7 +50,7 @@ INDOOR TEMP
 
 1. **Copy Configuration File**
 
-   Copy `src/config_shadow.h` to `src/config.h` and replace the placeholder values with your actual WiFi credentials and any other necessary configuration.
+   Copy `src/config_shadow.h` to `src/config.h` and update the configuration values:
 
    ```bash
    cp src/config_shadow.h src/config.h
@@ -99,18 +58,67 @@ INDOOR TEMP
 
 2. **Edit `config.h`**
 
-   Open `src/config.h` and update the following values:
+   Update the following configuration values in `src/config.h`:
+
+   #### Time Settings
+   ```cpp
+   #define TIME_ZONE -5        // Your timezone offset from UTC (e.g., -5 for EST)
+   #define DST_OFFSET 1        // Daylight Saving Time offset (1 for DST, 0 for no DST)
+   ```
+
+   #### Display Brightness (0-7)
+   ```cpp
+   #define TIME_DISPLAY_BRIGHTNESS 3     // Brightness for time display
+   #define INSIDE_TEMP_BRIGHTNESS 1      // Brightness for indoor temperature display
+   #define OUTSIDE_TEMP_BRIGHTNESS 1     // Brightness for outdoor temperature display
+   ```
+
+   #### Temperature Calibration
+   ```cpp
+   #define TEMP_OFFSET 0.0     // Temperature offset in degrees (adjust if sensor readings need calibration)
+   ```
+
+   #### WiFi Settings
+   ```cpp
+   const char* ssid = "Your_WiFi_SSID";
+   const char* password = "Your_WiFi_Password";
+   ```
+
+   #### Data Services Configuration
+   ```cpp
+   // DataHub API endpoint
+   const char* datahub_host = "https://your.datahub.endpoint";
+
+   // Weather API settings
+   const char* weather_api_endpoint = "https://your.weather.api.endpoint";
+   const char* device_name = "your-device-name";
+   const char* zipcode = "your-zipcode";
+
+   // Location coordinates (for weather data)
+   float latitude = YOUR_LATITUDE;    // e.g., 40.7128
+   float longitude = YOUR_LONGITUDE;  // e.g., -74.0060
+   ```
+
+   #### Update Intervals
+   ```cpp
+   const unsigned long WEATHER_UPDATE_INTERVAL = 60000; // Weather update interval in milliseconds
+   ```
+
+3. **Pin Configuration**
+
+   The default pin configuration is set up for common ESP32 boards. If you need to change the pin assignments, modify these values:
 
    ```cpp
-   // WiFi credentials
-   const char* WIFI_SSID = "Your_WiFi_SSID";
-   const char* WIFI_PASSWORD = "Your_WiFi_Password";
+   // Display pins
+   #define CLK1 22    // Time display clock
+   #define DIO1 23    // Time display data
+   #define CLK2 19    // Indoor temperature display clock
+   #define DIO2 21    // Indoor temperature display data
+   #define CLK3 32    // Outdoor temperature display clock
+   #define DIO3 25    // Outdoor temperature display data
 
-   // Weather API
-   const char* WEATHER_API_URL = "https:// OPENWEATHER API URL /";
-
-   // Update intervals
-   const unsigned long WEATHER_UPDATE_INTERVAL = 6000; // 60 seconds
+   // Temperature sensor pin
+   #define DHTPIN 18  // DHT22 data pin
    ```
 
 ### Building and Uploading
