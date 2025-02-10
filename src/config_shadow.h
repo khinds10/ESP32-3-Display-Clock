@@ -54,4 +54,8 @@ float longitude = -70.0;
 // Update intervals
 const unsigned long WEATHER_UPDATE_INTERVAL = 60000; // 60 seconds
 
+// Loop manager configuration
+const int API_UPDATE_INTERVAL = 600;    // Update API every 600 samples (10 minutes)
+const int RESTART_THRESHOLD = 1800;    // Restart after 1800 samples (30 minutes)
+
 #endif // CONFIG_H 

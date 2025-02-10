@@ -1,7 +1,9 @@
 #ifndef LOOP_MANAGER_H
 #define LOOP_MANAGER_H
 
-class LoopManager{
+#include "../config.h"
+
+class LoopManager {
 private:
     const int API_UPDATE_INTERVAL;
     const int RESTART_THRESHOLD;
@@ -9,9 +11,9 @@ private:
     int totalSamples;
 
 public:
-    LoopManager(int apiUpdateInterval = 300, int restartThreshold = 25000)
-        : API_UPDATE_INTERVAL(apiUpdateInterval),
-          RESTART_THRESHOLD(restartThreshold),
+    LoopManager()
+        : API_UPDATE_INTERVAL(::API_UPDATE_INTERVAL),
+          RESTART_THRESHOLD(::RESTART_THRESHOLD),
           samplesTaken(0),
           totalSamples(0) {}
 

@@ -91,8 +91,8 @@ void setup() {
 
   // Get initial outside temperature reading
   dht.begin();
-  api.updateWeatherHub(dht.getTemperatureF(), dht.getHumidity());
-  outsideTempDisplay.showTemperature(dht.getTemperatureF());
+  String outsideTemp = api.updateWeatherHub(dht.getTemperatureF(), dht.getHumidity());
+  outsideTempDisplay.showTemperature(outsideTemp);
 }
 
 void loop() {
@@ -111,8 +111,8 @@ void loop() {
 
     // Update the weather hub, data hub, and outside temperature display
     if (loopManager.shouldUpdateAPI()) {
-        api.updateWeatherHub(dht.getTemperatureF(), dht.getHumidity());
-        outsideTempDisplay.showTemperature(dht.getTemperatureF());
+        String outsideTemp = api.updateWeatherHub(dht.getTemperatureF(), dht.getHumidity());
+        outsideTempDisplay.showTemperature(outsideTemp);
         loopManager.resetSamplesTaken();
     }
 

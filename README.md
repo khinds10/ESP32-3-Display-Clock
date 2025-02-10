@@ -101,8 +101,18 @@ This project uses an ESP32 microcontroller to display the current time and tempe
 
    #### Update Intervals
    ```cpp
+   // Weather updates
    const unsigned long WEATHER_UPDATE_INTERVAL = 60000; // Weather update interval in milliseconds
+
+   // Loop manager settings
+   const int API_UPDATE_INTERVAL = 600;     // Update API every 600 samples (10 minutes)
+   const int RESTART_THRESHOLD = 1800;    // Restart after 1800 samples (30 minutes)
    ```
+
+   These settings control how often the device:
+   - Fetches new weather data (WEATHER_UPDATE_INTERVAL)
+   - Sends data to your API endpoint (API_UPDATE_INTERVAL)
+   - Automatically restarts to prevent memory issues (RESTART_THRESHOLD)
 
 3. **Pin Configuration**
 
