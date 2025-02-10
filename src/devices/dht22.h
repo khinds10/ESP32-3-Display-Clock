@@ -31,7 +31,7 @@ public:
             Serial.println(_pin);
             return "ERR";
         }
-        float tempF = celciusToFahrenheit(tempC);
+        float tempF = celciusToFahrenheit(tempC) + TEMP_OFFSET;
         return String(tempF, 0);
     }
 
@@ -48,7 +48,7 @@ public:
     float getRawTemperatureF() {
         float tempC = dht.readTemperature();
         if (isnan(tempC)) return NAN;
-        return celciusToFahrenheit(tempC);
+        return celciusToFahrenheit(tempC) + TEMP_OFFSET;
     }
 
     float getRawHumidity() {

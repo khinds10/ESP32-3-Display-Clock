@@ -1,4 +1,4 @@
-/*
+/**
  * Time and Temperature Display Program
  *
  * This program is designed to run on an ESP32 microcontroller. It connects to a WiFi network,
