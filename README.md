@@ -2,6 +2,9 @@
 
 This project uses an ESP32 microcontroller to display the current time and temperatures on three TM1637 displays. The first display shows the current time in 12-hour format with a blinking colon and PM indicator. The second display shows the indoor temperature from a DHT22 sensor. The third display shows the outdoor temperature fetched from an online weather API.
 
+Using openweather API - https://openweathermap.org/api/one-call-3
+
+
 ## Hardware Setup
 
 ### Components Required
@@ -10,7 +13,7 @@ This project uses an ESP32 microcontroller to display the current time and tempe
 - 3 x TM1637 4-Digit 7-Segment Displays
 - 1 x DHT22 Temperature and Humidity Sensor
 - Jumper wires
-- Breadboard (optional)
+- 5mm Tinted Plexiglas
 
 ### Wiring Diagram
 
@@ -37,7 +40,7 @@ This project uses an ESP32 microcontroller to display the current time and tempe
 ### Notes
 
 - Ensure all components share a common ground with the ESP32.
-- Use appropriate pull-up resistors if necessary for the DHT22 data line.
+
 
 ## Build Process
 
@@ -70,6 +73,11 @@ Close up of the assembled case
 
 - [PlatformIO](https://platformio.org/) installed on your development environment.
 - An internet connection for the ESP32 to fetch weather data.
+
+### Check out the Git Repository
+https://github.com/khinds10/ESP32-3-Display-Clock
+This includes the STL files for 3D printing as well as the code to upload to the ESP32 to get it to run.
+
 
 ### Configuration
 
@@ -123,6 +131,17 @@ Close up of the assembled case
    float latitude = YOUR_LATITUDE;    // e.g., 40.7128
    float longitude = YOUR_LONGITUDE;  // e.g., -74.0060
    ```
+   
+Create an account on openweathermap.org to get the right weather data for outside conditions.
+
+The API call being used is: https://openweathermap.org/api/one-call-3
+
+Note: Data API is optional
+
+It's built from the following project:
+
+https://github.com/khinds10/DeviceHub
+
 
    #### Update Intervals
    ```cpp
@@ -139,7 +158,7 @@ Close up of the assembled case
    - Sends data to your API endpoint (API_UPDATE_INTERVAL)
    - Automatically restarts to prevent memory issues (RESTART_THRESHOLD)
 
-3. **Pin Configuration**
+2. **Pin Configuration**
 
    The default pin configuration is set up for common ESP32 boards. If you need to change the pin assignments, modify these values:
 
