@@ -43,16 +43,16 @@ This project uses an ESP32 microcontroller to display the current time and tempe
 
 ### Construction Photos
 
-![Wiring the displays](Construction/IMG_20250210_153743.jpg)
-![Mount the displays](Construction/IMG_20250210_153811.jpg)
-![Prepare the 3D Printed Case](Construction/IMG_20250210_160401.jpg)
-![Assemble the case](Construction/IMG_20250210_160556.jpg)
-![Close up of the assembled case](Construction/IMG_20250210_161437.jpg)
+![Wiring the displays](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_153743.jpg)
+![Mount the displays](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_153811.jpg)
+![Prepare the 3D Printed Case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_160401.jpg)
+![Assemble the case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_160556.jpg)
+![Close up of the assembled case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_161437.jpg)
 
 ### Finished Product
 
-![Complete setup - front view](Construction/IMG_20250210_164237.jpg)
-![Complete setup - rear view](Construction/IMG_20250210_164244.jpg)
+![Complete setup - front view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164237.jpg)
+![Complete setup - rear view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164244.jpg)
 
 ## Software Setup
 
