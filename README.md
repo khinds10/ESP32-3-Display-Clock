@@ -41,32 +41,6 @@ Using openweather API - https://openweathermap.org/api/one-call-3
 
 - Ensure all components share a common ground with the ESP32.
 
-
-## Build Process
-
-### Construction Photos
-
-Wiring the displays
-![Wiring the displays](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_153743.jpg)
-
-Mount the displays
-![Mount the displays](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_153811.jpg)
-
-Prepare the 3D Printed Case
-![Prepare the 3D Printed Case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_160401.jpg)
-
-Assemble the case
-![Assemble the case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_160556.jpg)
-
-Close up of the assembled case
-![Close up of the assembled case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_161437.jpg)
-
-### Finished Product
-
-![Complete setup - front view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164237.jpg)
-![Complete setup - rear view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164244.jpg)
-![Complete setup - in use](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250211_154256.jpg)
-
 ## Software Setup
 
 ### Prerequisites
@@ -180,6 +154,39 @@ https://github.com/khinds10/DeviceHub
 1. Connect your ESP32 to your computer via USB.
 2. Open the project in your PlatformIO environment.
 3. Build and upload the firmware to the ESP32.
+
+## Build Process
+
+
+Using the 3DPrint/ folder 3D print the STL files to create the case for the project.
+
+Mount the Displays using hot glue to the front panel, also cut and hot glue the Plexiglas (the case allows for 5mm thick glass)
+
+Carefully close the case using the inner-box going inside the larger outer frame. It should snap close with friction.
+
+### Construction Photos
+
+Wiring the displays
+![Wiring the displays](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_153743.jpg)
+
+Mount the displays
+![Mount the displays](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_153811.jpg)
+
+Prepare the 3D Printed Case
+![Prepare the 3D Printed Case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_160401.jpg)
+
+Assemble the case
+![Assemble the case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_160556.jpg)
+
+Close up of the assembled case
+![Close up of the assembled case](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_161437.jpg)
+
+### Finished Product
+
+![Complete setup - front view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164237.jpg)
+![Complete setup - rear view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164244.jpg)
+![Complete setup - in use](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250211_154256.jpg)
+
 
 ### License
 
