@@ -39,6 +39,21 @@ This project uses an ESP32 microcontroller to display the current time and tempe
 - Ensure all components share a common ground with the ESP32.
 - Use appropriate pull-up resistors if necessary for the DHT22 data line.
 
+## Build Process
+
+### Construction Photos
+
+![Wiring the displays](Construction/IMG_20250210_153743.jpg)
+![Mount the displays](Construction/IMG_20250210_153811.jpg)
+![Prepare the 3D Printed Case](Construction/IMG_20250210_160401.jpg)
+![Assemble the case](Construction/IMG_20250210_160556.jpg)
+![Close up of the assembled case](Construction/IMG_20250210_161437.jpg)
+
+### Finished Product
+
+![Complete setup - front view](Construction/IMG_20250210_164237.jpg)
+![Complete setup - rear view](Construction/IMG_20250210_164244.jpg)
+
 ## Software Setup
 
 ### Prerequisites
