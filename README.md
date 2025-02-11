@@ -62,6 +62,7 @@ Close up of the assembled case
 
 ![Complete setup - front view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164237.jpg)
 ![Complete setup - rear view](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250210_164244.jpg)
+![Complete setup - in use](https://raw.githubusercontent.com/khinds10/ESP32-3-Display-Clock/refs/heads/main/Construction/IMG_20250211_154256.jpg)
 
 ## Software Setup
 
